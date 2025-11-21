@@ -262,6 +262,14 @@ Tela-06
 Tela-07
 ![Thread-logs7](./images/21-thread-logs-item-preco-atualizado.png)
 
+Os e-mails foram recebidos, conforme imagens abaixo:
+
+Tela-08
+![Thread-logs8](./images/22-email-recebido.png)
+
+Tela-09
+![Thread-logs9](./images/23-email-recebido-produto-invalido.png)
+
 ---
 
 ## 📄 Conclusão
