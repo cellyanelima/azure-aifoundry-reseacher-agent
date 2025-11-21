@@ -77,7 +77,7 @@ As instruções definem todas as regras operacionais do agente, garantindo consi
 
 Após a geração do prompt pelo Chat playground foram realizadas inserções de informações que resultaram na instrução final abaixo:
 
-![Prompt completo](./prompt-completo.txt)
+[Prompt completo](./prompt-completo.txt)
 
 ### **Detalhes da tarefa**
 
@@ -201,3 +201,65 @@ O usuário informará os produtos em uma lista simples:
 
 ---
 
+### 🔎 Knowledge - Grounding com Bing Search
+
+A adicionado um Knowledge para utilisar com o Bing Search, permitindo que o agente busque informações reais e atualizadas na web, garantindo respostas precisas, confiáveis e baseadas em dados verdadeiros.
+
+![Configuração do Grounding](./images/7-criacao-bing.png)
+
+![Configuração do Grounding](./images/8-bing-criado.png)
+
+![Configuração do Grounding](./images/9-conectando-bing.png)
+
+---
+
+## 📧 Action - Enviar Resultado por E-mail - Azure Logic Apps
+
+Uma **Action** foi criada para possibilitar ao agente enviar via e-mail o JSON completo da pesquisa.
+
+Selecionei o Azure Logic Apps e em seguida selecionei Workflow - SendEmailFromOutlook.
+![Add action](./images/10-azure-logic-apps.png)
+
+Defini o nome da ferramenta (getprices) e descrevi como a ferramenta sera invocada (Use essa ferramenta quando um e-mail com os preç precisar ser enviado). Em Add Logic App action - Authentication, fiz login com uma conta Outlook, sendo ela responsável pelo o envio do email e cliquei em criar.
+
+![Add Logic App action](./images/11-criacao-logic-app-action.png)
+
+Tela final após criação
+![Finalizado](./images/12-logic-app-action-configurado.png)
+
+---
+
+## 🧩 Representação Visual do Fluxo
+
+O fluxo do agente iniciasse pela inserção de lista de itens pelo usuário, enviando assim uma solicitação ao agente no Azure AI Foundry, que processa a consulta usando o modelo gpt-4o-mini, realiza a busca de preços via Bing Search grounding, gerando um JSON estruturado com o resultado e envia essas informações ao usuário por e-mail através do Azure Logic Apps.
+
+![Diagrama Arquitetural do Agente](./images/13-fluxo-agente.png)
+
+---
+
+### **Testes realizados - perguntas e respostas**
+
+Uma série de testes foram realizados, desde a etapa onde o usuario insere um imput enviando apenas a lista de produtos(Tela-01), sem regionalizar a pedir o enviar do e-mail, até a busca acertiva no suburbio indicado e preço verificado no site do supermercado (Tela-07). Apartir da Tela-03 percebe-se que o item fora do escopo foi detectado, pois foi colocada uma restrição clara na instrução do agente.
+
+Tela-01
+![Thread-logs1](./images/14-thread-logs1.png)
+
+Tela-02
+![Thread-logs2](./images/15-thread-logs2.png)
+
+Tela-03
+![Thread-logs3](./images/16-thread-logs3.png)
+
+Tela-04
+![Thread-logs4](./images/17-thread-logs4.png)
+
+Tela-05
+![Thread-logs5](./images/18-thread-logs5.png)
+
+Tela-06
+![Thread-logs6](./images/19-thread-logs6.png)
+
+Tela-07
+![Thread-logs7](./images/21-thread-logs-item-preco-atualizado.png)
+
+---
