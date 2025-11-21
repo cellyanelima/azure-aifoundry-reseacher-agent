@@ -237,7 +237,7 @@ O fluxo do agente iniciasse pela inserção de lista de itens pelo usuário, env
 
 ---
 
-### **Testes realizados - perguntas e respostas**
+## **Testes realizados - perguntas e respostas**
 
 Uma série de testes foram realizados, desde a etapa onde o usuario insere um imput enviando apenas a lista de produtos(Tela-01), sem regionalizar a pedir o enviar do e-mail, até a busca acertiva no suburbio indicado e preço verificado no site do supermercado (Tela-07). Apartir da Tela-03 percebe-se que o item fora do escopo foi detectado, pois foi colocada uma restrição clara na instrução do agente.
 
@@ -263,3 +263,18 @@ Tela-07
 ![Thread-logs7](./images/21-thread-logs-item-preco-atualizado.png)
 
 ---
+
+## 📄 Conclusão
+
+Este README documenta o desenvolvimento integral do agente de pesquisa de preços, demonstrando domínio técnico de IA aplicada, grounding, ações e orquestração no Azure AI Foundry. O projeto está pronto para apresentação técnica ou extensão para produção.
+
+---
+
+## Referências
+
+- [Artificial Intelligence for Beginners - A Curriculum](https://microsoft.github.io/AI-For-Beginners/)
+- [Generative AI for Beginners (Version 3) - A Course](https://microsoft.github.io/generative-ai-for-beginners/#/)
+- [AI Agents for Begineers Repository](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [MCP for Beginners Repository](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Discord do AI Foundry](https://aka.ms/foundry/discord)
+- [Regioes dos modelos](https://learn.microsoft.com/en-us/azure/ai-foundry/agents/concepts/model-region-support?tabs=global-standard)
